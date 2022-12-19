@@ -38,8 +38,8 @@ public class MemberService {
 			sc.nextLine();
 			
 			switch(menuNum) {
-			case 1: break;
-			case 2: break;
+			case 1: System.out.println(signUp()); break;
+			case 2: System.out.println(login());break;
 			case 3: break;
 			case 4: break;
 			case 5: break;
@@ -52,7 +52,7 @@ public class MemberService {
 	}
 	
 	// 회원가입 메서드
-	public String sighUp() {
+	public String signUp() {
 		System.out.println("\n========== 회원 가입 ==========");
 		
 		// 객체 배열(memberArr)에 가입한 회원 정보를 저장할 예정
@@ -120,15 +120,37 @@ public class MemberService {
 	
 	public String login() {
 		
+		System.out.println("******로그인******");
+		
 		// 1) memberArr 배열 내 요소를 순서대로 접근하여 null이 아닌지 확인
+		
+		for(int i = 0; i < memberArr.length; i++) {
+			if(memberArr[i] != null) {
+				System.out.print("아이디 입력: ");
+				String memberId = sc.next();
+				
+				System.out.print("비밀번호 입력: ");
+				String memberPw = sc.next();
+				
+				if(memberId.equals(memberArr[i].getMemberId()) && 
+				   memberPw.equals(memberArr[i].getMemberPw())) {
+					
+					loginMember = memberArr[i];
+					
+					return "로그인 성공!!";
+				} else {
+					return "아이디 또는 비밀번호가 일치하지 않습니다";
+				}
+			}
+		}
 				// 회원 정보가 있을 경우
 				// 2) 회원정보(memberArr[i])의 아이디, 비밀번호와
 				// 입력받은 아이디, 비밀번호가 같은지 확인
 					// 3) 로그인 회원 정보 객체(Member)를 참조하는 변수 loginMember에
 					//	  현재 접근중인 memberArr[i] 요소에 저장된 주소를 얕은 복사
+		return "로그인 성공!!";
 		
 		
 		// 4) 로그인 성공/실패 여부에 따라 결과값을 반환
-		return "";
 	}
 }
