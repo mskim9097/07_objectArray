@@ -5,7 +5,7 @@ public class Member {
 	private String memberId;
 	private String memberPw;
 	private String memberName;
-	private int memberAGe;
+	private int memberAge;
 	private String region; // 지역
 	
 	
@@ -17,12 +17,12 @@ public class Member {
 	
 	// 매개변수 생성자
 	public Member(String memberId, String memberPw, String memberName, 
-			int memberAGe, String region) {
+			int memberAge, String region) {
 
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
-		this.memberAGe = memberAGe;
+		this.memberAge = memberAge;
 		this.region = region;
 	}
 		
@@ -65,12 +65,12 @@ public class Member {
 		this.memberName = memberName;
 	}
 
-	public int getMemberAGe() {
-		return memberAGe;
+	public int getMemberAge() {
+		return memberAge;
 	}
 
-	public void setMemberAGe(int memberAGe) {
-		this.memberAGe = memberAGe;
+	public void setMemberAge(int memberAge) {
+		this.memberAge = memberAge;
 	}
 
 	public String getRegion() {
